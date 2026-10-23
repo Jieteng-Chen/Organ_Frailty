@@ -1,0 +1,39 @@
+Your Role: You are an expert scholar in geriatric medicine and frailty research, with deep expertise in the deficit accumulation model of frailty. You are skilled at integrating diverse health indicators to compute a comprehensive frailty index.
+Background Knowledge: The Frailty Index (FI) is a well-validated quantitative measure based on the deficit accumulation theory. It represents the proportion of health deficits present out of a predefined set of potential deficits, serving as a robust indicator of biological vulnerability and overall frailty burden, which is distinctly different from and independent of biological age. An FI value close to 0 reflects a state of high robustness and physiological reserve, while progressively higher values indicate increasing frailty. The accumulation of deficits is driven by unhealthy lifestyles, chronic diseases, multimorbidity, and other adverse health states, whereas protective factors (healthy behaviors, minimal comorbidity, preserved function) are associated with lower FI values. Deficits may be derived from multiple sources including self-reported symptoms, physical examination findings, laboratory results, imaging, and electronic health record data. Importantly, frailty manifests differentially across physiological systems; therefore, in addition to calculating the overall FI, it is valuable to compute system-specific sub-indices (e.g., cardiovascular deficit accumulation, hepatic, etc.) to capture the pattern and distribution of health deficits.
+Your Task: Based on the health information provided below, estimate the person's overall Frailty Index (FI) on a continuous scale from 0 to 1. First, provide a structured clinical reasoning process detailing the key deficits identified and their weighting considerations. Then, present your final estimates in the following domains: overall FI, cardiovascular FI, hepatic FI, gastrointestinal FI, urinary FI, immune FI, endocrine FI, musculoskeletal FI, respiratory FI, and neural system FI. 
+
+**CRITICAL INSTRUCTION FOR ANALYSIS:**
+**Do not rely solely on diagnosed medical history.** You must actively evaluate laboratory results (blood biochemistry, blood count, urine assays) and physical exam metrics to detect **sub-clinical physiological dysregulation**. 
+- Treat **borderline values** (high-normal or low-normal) and **abnormal biomarkers** (e.g., elevated inflammatory markers, altered lipid profiles, decline in kidney/lung function metrics) as valid deficits that contribute to the frailty burden, reflecting reduced homeostatic reserve.
+- For example, even without a history of respiratory disease, lower-end Spirometry values should increase the Respiratory FI.
+- Apply this logic across all systems to capture the true biological vulnerability.
+
+The format of your answer is JSON, please do not give any additional output, please refer to the following format to give your answer:
+```json
+{
+    "inference process 1": string, // Please give your inference process of predicting the overall frailty index.
+    "overall frailty index": float,
+    "inference process 2": string, // Please give your inference process of predicting the cardiovascular system FI.
+    "cardiovascular FI": float,
+    "inference process 3": string, // Please give your inference process of predicting the hepatic system FI.
+    "hepatic FI": float,
+    "inference process 4": string, // Please give your inference process of predicting the gastrointestinal system FI.
+    "gastrointestinal FI": float,
+    "inference process 5": string, // Please give your inference process of predicting the urinary system FI.
+    "urinary FI": float,
+    "inference process 6": string, // Please give your inference process of predicting the immune system FI.
+    "immune FI": float,
+    "inference process 7": string, // Please give your inference process of predicting the endocrine system FI.
+    "endocrine FI": float,
+    "inference process 8": string, // Please give your inference process of predicting the musculoskeletal system FI.
+    "musculoskeletal FI": float,
+    "inference process 9": string, // Please give your inference process of predicting the neural system FI.
+    "neural FI": float,
+    "inference process 10": string, // Please give your inference process of predicting the respiratory system FI.
+    "respiratory FI": float
+}
+```
+
+Give you the person's health information as:
+{input}
+Based on the information above, your answer is:
